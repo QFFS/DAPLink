@@ -1,0 +1,7 @@
+common:
+    sources:
+        board:
+            - source/board/stm32f767ig.c
+        target:
+            - source/target/st/stm32f767ig/target.c
+            - source/target/st/target_reset.c

@@ -10,17 +10,22 @@ common:
         - DAPLINK_HIC_ID=0x97969908  # DAPLINK_HIC_ID_STM32F103XB
         - __packed=__packed          # Prevent redefinition of __packed with ARMCC
         - DAPLINK_NO_ASSERT_FILENAMES
+        - STM32F10X_MD               # SWO Driver
+        - SWO_PA10                   # SWO Pin marco
     includes:
         - source/hic_hal/stm32/stm32f103xb
         - source/hic_hal/stm32/stm32f103xb/cmsis
         - source/hic_hal/stm32/stm32f103xb/STM32F1xx_HAL_Driver
         - source/hic_hal/stm32/stm32f103xb/STM32F1xx_HAL_Driver/Inc
+        - source/hic_hal/stm32/stm32f103xb/STM32F10x_ARM_Driver
     sources:
         hic_hal:
             - source/hic_hal/stm32/stm32f103xb
             - source/hic_hal/stm32/stm32f103xb/cmsis
             - source/hic_hal/stm32/stm32f103xb/armcc
             - source/hic_hal/stm32/stm32f103xb/STM32F1xx_HAL_Driver/Src
+        swo_driver:
+            - source/hic_hal/stm32/stm32f103xb/STM32F10x_ARM_Driver
 
 tool_specific:
     uvision:

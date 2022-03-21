@@ -87,7 +87,7 @@ Provides definitions about:
 
 /// Indicate that UART Serial Wire Output (SWO) trace is available.
 /// This information is returned by the command \ref DAP_Info as part of <b>Capabilities</b>.
-#define SWO_UART                0               ///< SWO UART:  1 = available, 0 = not available
+#define SWO_UART                1               ///< SWO UART:  1 = available, 0 = not available
 
 /// Maximum SWO UART Baudrate
 #define SWO_UART_MAX_BAUDRATE   10000000U       ///< SWO UART Maximum Baudrate in Hz
@@ -452,7 +452,10 @@ static __inline void LED_CONNECTED_OUT(uint32_t bit)
 */
 static __inline void LED_RUNNING_OUT(uint32_t bit)
 {
-    ;             // Not available
+    if (bit & 1)
+        RUNNING_LED_PORT->BRR = RUNNING_LED_PIN; // LED on
+    else
+        RUNNING_LED_PORT->BSRR = RUNNING_LED_PIN;// LED off
 }
 
 ///@}

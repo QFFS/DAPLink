@@ -489,6 +489,10 @@ projects:
         - *module_if
         - *module_hic_stm32f103xb
         - records/board/stm32f746zg.yaml
+    stm32f103xb_stm32f767ig_if:
+        - *module_if
+        - *module_hic_stm32f103xb
+        - records/board/stm32f767ig.yaml
     stm32f103xb_stm32f207zg_if:
         - *module_if
         - *module_hic_stm32f103xb
